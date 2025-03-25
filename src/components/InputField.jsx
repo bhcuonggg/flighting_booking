@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { AiOutlineMail, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible, AiOutlineUser } from "react-icons/ai";
+import {
+  AiOutlineMail,
+  AiOutlineLock,
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+  AiOutlineUser,
+} from "react-icons/ai";
 
-const InputField = ({ type, placeholder, icon }) => {
+const InputField = ({ type, placeholder, icon, value, onChange }) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   // Chọn icon phù hợp
@@ -25,16 +31,18 @@ const InputField = ({ type, placeholder, icon }) => {
 
       {/* Input field */}
       <input
-        type={isPasswordShown ? "text" : type}
+        type={type === "password" && isPasswordShown ? "text" : type}
         placeholder={placeholder}
         className="input-field"
+        value={value} // Gán giá trị từ props
+        onChange={onChange} // Cập nhật giá trị nhập vào
         required
       />
 
       {/* Hiển thị icon mắt cho mật khẩu */}
       {type === "password" && (
         <span
-          onClick={() => setIsPasswordShown((prevState) => !prevState)}
+          onClick={() => setIsPasswordShown((prev) => !prev)}
           className="eye-icon"
         >
           {isPasswordShown ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
