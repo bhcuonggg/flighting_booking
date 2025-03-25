@@ -338,3 +338,8 @@
 .passengers-selector .dropdown-arrow {
   margin-left: auto;
 }
+.button_logout{
+  padding: 8px 16px;
+  color: #f3f4f6;
+  background-color: #1e40af;
+}
