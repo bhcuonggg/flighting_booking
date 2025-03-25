@@ -427,6 +427,22 @@ const FlightSearch = () => {
                   <div>
                     <small>Thời gian bay: {flight.duration}</small>
                   </div>
+                  <div>
+                     {/* Thêm nút Đặt hàng */}
+                      <button 
+                    // onClick={() => handleBooking(flight)} 
+                    style={{
+                      backgroundColor: '#28a745', 
+                      color: 'white', 
+                      padding: '8px 16px', 
+                      border: 'none', 
+                      borderRadius: '5px', 
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Đặt vé
+                  </button>
+                  </div>
                 </div>
               </div>
             ))}
