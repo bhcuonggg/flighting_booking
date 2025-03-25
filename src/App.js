@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<FlightBooking />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        
       </Routes>
     </Router>
   );
